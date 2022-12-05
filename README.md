@@ -1,6 +1,6 @@
 # Desafio Empresa
 
-Realizamos o projeto/desafio que nosso [professor Almir](https://github.com/jose-almir)
+Nosso [professor Almir](https://github.com/jose-almir)  pediu para realizarmos um desafio com base nos requisitos abaixo:
 
 ### Objetivo: 
 Colocar em prática os conhecimentos gerais adquiridos em Spring.
