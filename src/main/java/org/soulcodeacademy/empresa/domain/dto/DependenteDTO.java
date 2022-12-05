@@ -1,5 +1,7 @@
 package org.soulcodeacademy.empresa.domain.dto;
 
+import org.soulcodeacademy.empresa.domain.Empregado;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -14,6 +16,16 @@ public class DependenteDTO {
 
     @NotNull
     private Integer idResponsavel;
+
+    private Empregado responsavel;
+
+    public Empregado getResponsavel() {
+        return responsavel;
+    }
+
+    public void setResponsavel(Empregado responsavel) {
+        this.responsavel = responsavel;
+    }
 
     public String getNome() {
         return nome;

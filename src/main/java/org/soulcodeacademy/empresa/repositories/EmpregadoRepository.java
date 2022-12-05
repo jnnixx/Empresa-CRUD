@@ -1,4 +1,4 @@
-package org.soulcodeacademy.empresa.reporsitories;
+package org.soulcodeacademy.empresa.repositories;
 
 import org.soulcodeacademy.empresa.domain.Empregado;
 import org.springframework.data.jpa.repository.JpaRepository;

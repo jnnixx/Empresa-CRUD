@@ -2,7 +2,7 @@ package org.soulcodeacademy.empresa.services;
 
 import org.soulcodeacademy.empresa.domain.Projeto;
 import org.soulcodeacademy.empresa.domain.dto.ProjetoDTO;
-import org.soulcodeacademy.empresa.reporsitories.ProjetoRepository;
+import org.soulcodeacademy.empresa.repositories.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

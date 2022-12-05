@@ -3,7 +3,9 @@ package org.soulcodeacademy.empresa.controllers;
 import org.soulcodeacademy.empresa.domain.Empregado;
 import org.soulcodeacademy.empresa.domain.dto.EmpregadoDTO;
 import org.soulcodeacademy.empresa.services.EmpregadoService;
+import org.soulcodeacademy.empresa.services.ProjetoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,6 +16,9 @@ public class EmpregadoController {
 
     @Autowired
     EmpregadoService empregadoService;
+
+    @Autowired
+    ProjetoService projetoService;
 
     @GetMapping("/empregados")
     public List<Empregado> listarEmpregados(){
@@ -34,6 +39,22 @@ public class EmpregadoController {
     public Empregado atualizarEmpregado(@PathVariable Integer idEmpregado, @Valid @RequestBody EmpregadoDTO dto) {
         Empregado atualizado = this.empregadoService.atualizarEmpregado(idEmpregado, dto);
         return atualizado;
+    }
+
+    @PutMapping("/empregados/{idEmpregado}/projetos/{idProjeto}/adicionar")
+    public ResponseEntity adicionarProjeto(@PathVariable Integer idEmpregado, @PathVariable Integer idProjeto) {
+
+        empregadoService.adicionarProjeto(idEmpregado, idProjeto);
+
+        return ResponseEntity.ok().body("Projeto "+idProjeto+" adicionado ao empregado: "+idEmpregado);
+
+    }
+    @PutMapping("/empregados/{idEmpregado}/projetos/{idProjeto}/deletar")
+    public ResponseEntity deletarProjeto(@PathVariable Integer idEmpregado, @PathVariable Integer idProjeto) {
+
+        empregadoService.removerProjeto(idEmpregado, idProjeto);
+
+        return ResponseEntity.ok().body("Projeto "+idProjeto+" removido do empregado: "+idEmpregado);
     }
 
     @DeleteMapping("/empregados/{idEmpregado}")

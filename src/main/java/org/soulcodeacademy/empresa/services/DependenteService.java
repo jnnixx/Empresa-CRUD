@@ -2,10 +2,8 @@ package org.soulcodeacademy.empresa.services;
 
 import org.soulcodeacademy.empresa.domain.Dependente;
 import org.soulcodeacademy.empresa.domain.Empregado;
-import org.soulcodeacademy.empresa.domain.Endereco;
 import org.soulcodeacademy.empresa.domain.dto.DependenteDTO;
-import org.soulcodeacademy.empresa.domain.dto.EmpregadoDTO;
-import org.soulcodeacademy.empresa.reporsitories.DependenteRepository;
+import org.soulcodeacademy.empresa.repositories.DependenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,9 +46,10 @@ public class DependenteService {
     }
 
     public Dependente atualizarDependente(Integer idDependente, DependenteDTO dependenteDTO){
+        Empregado empregado = this.empregadoService.getEmpregado(dependenteDTO.getIdResponsavel());
         Dependente dependenteAtual = this.getDependete(idDependente);
-        Empregado responsavel = this.empregadoService.getEmpregado(dependenteDTO.getIdResponsavel());
 
+        dependenteAtual.setResponsavel(empregado);
         dependenteAtual.setNome(dependenteDTO.getNome());
         dependenteAtual.setIdade(dependenteDTO.getIdade());
 

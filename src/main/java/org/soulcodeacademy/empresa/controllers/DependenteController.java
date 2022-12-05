@@ -36,7 +36,7 @@ public class DependenteController {
     }
 
     @DeleteMapping("/dependentes/{idDependente}")
-    public void deletarDependente(@PathVariable Integer idDependete){
-        this.dependenteService.deletarDependente(idDependete);
+    public void deletarDependente(@PathVariable Integer idDependente){
+        this.dependenteService.deletarDependente(idDependente);
     }
 }

@@ -4,10 +4,10 @@ import org.soulcodeacademy.empresa.domain.Dependente;
 import org.soulcodeacademy.empresa.domain.Empregado;
 import org.soulcodeacademy.empresa.domain.Endereco;
 import org.soulcodeacademy.empresa.domain.Projeto;
-import org.soulcodeacademy.empresa.reporsitories.DependenteRepository;
-import org.soulcodeacademy.empresa.reporsitories.EmpregadoRepository;
-import org.soulcodeacademy.empresa.reporsitories.EnderecoRepository;
-import org.soulcodeacademy.empresa.reporsitories.ProjetoRepository;
+import org.soulcodeacademy.empresa.repositories.DependenteRepository;
+import org.soulcodeacademy.empresa.repositories.EmpregadoRepository;
+import org.soulcodeacademy.empresa.repositories.EnderecoRepository;
+import org.soulcodeacademy.empresa.repositories.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
